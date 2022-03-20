@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exercice 1</title>
+    <style>
+        body{ margin: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        td{ padding: 15px 5px;}
+        tr{ border-bottom: 1px solid gray;}
+        .users{ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; border-radius: 8px; padding: 20px;} 
+        .border-top{ border-top: 1px solid #ddd;}
+        .w-full{ width: 100%;}
+        .font-bold{ font-weight: bold;}
+        .text-center{ text-align: center;}
+        .text-bold{ font-weight: bold;}
+        .add{ text-align: right; border-radius: 5px; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; margin-top: 20px; padding:15px; height: 100%;}
+        .al-right{ text-align: right;}
+        .btn-save{cursor: pointer; font-size: medium; background-color: #faad1d; color: white; padding: 10px 30px; border: none; border-radius: 8px; }
+        .btn-add{ cursor: pointer; font-size: medium; background-color: #faad1d; color: white; padding: 10px 30px; border: none; border-radius: 8px;}
+        .valide{ color: white; background-color: #5BE881; border-radius: 8px; padding: 4px 46px;}
+        .rejected{ color: white; background-color: #FF0000; border-radius: 8px; padding: 4px 36px;}
+        .on-validation{ color: white; background-color: #FDB64D; border-radius: 8px; padding: 4px 20px;}
+        .modal{ display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto;  background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);}
+        .modal-content { border-radius: 8px; background-color: #fefefe; margin: auto; padding: 28px; width: 80%;}
+        .close { color: #aaaaaa; float: right; font-size: 20px; font-weight: bold;}
+        .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer;}
+        .mr-r{ margin-right: 10%;}
+        .mr-t{ margin-top: 20px;}
+        .container{ margin: 10px 0px;}
+        .column-left { float: left;width: 26%;} 
+        .column-right { display: inline-block; width: 26%;}  
+        .column-center { display: inline-block; width: 26%;}  
+        img{ cursor: pointer;}     
+        .input{ margin-top: 6px; border-radius: 8px; padding: 10px; border: 1px solid rgb(151, 151, 151); width: 100%; outline: none;}
+    </style>
+</head>
+<body>
+    <div class="users">
+        <table id="users" class="w-full">
+            <thead>
+                <tr class="font-bold">
+                    <td>ID</td>
+                    <td>Date de création</td>
+                    <td class="text-center">Etat</td>
+                    <td>Nom</td>
+                    <td>Prénom</td>
+                    <td>Nom d'utilisateur</td>
+                    <td>Matricule</td>
+                    <td class="text-center">Action</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>        
+        </table>    
+    </div>
+
+    <div class="add">
+        <button id="myBtn" class="btn-add">Ajouter d'utilisateurs</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ajout utilisateur</h2>
+            <form class="form" onsubmit="event.preventDefault();Add();" autocomplete="off">
+                <div class="container">
+                    <div class="column-center mr-r">
+                        <label>Nom: </label>
+                        <input required class="input" type="text" id="nom"/>    
+                    </div>
+                    <div class="column-left mr-r">
+                        <label>Prénom: </label>
+                        <input required class="input" type="text" id="prenom"/>    
+                    </div>
+                    <div class="column-right">
+                        <label>Etat: </label>
+                        <select class="input" type="text" id="etat">
+                            <option value="En validation">En validation</option>
+                            <option value="Rejete">Rejete</option>
+                            <option value="Valide">Valide</option>
+                        </select>    
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="column-center mr-r">
+                        <label>Nom d'utilisateur: </label>
+                        <input required class="input" type="text" id="utilisateur"/>    
+                    </div>
+                    <div class="column-left mr-r">
+                        <label>Date de création: </label>
+                        <input required class="input" type="date" id="date"/>    
+                    </div>
+                    <div class="column-right">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="column-center mr-r">
+                        <label>Matricule: </label>
+                        <input required class="input" type="text" id="matricule"/>    
+                    </div>
+                    <div class="column-left mr-r">
+                    </div>
+                    <div class="column-right">
+                    </div>
+                </div>
+
+                <div class="al-right">
+                    <input required id="btn-save" type="submit" value="Enregistrer" class="btn-save mr-t">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>
